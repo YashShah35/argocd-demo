@@ -16,8 +16,8 @@ spec:
         run: hello-dotnet
     spec:
       containers:
-      - name: hello-argo-demo
-        image: helloworldaspnetcore:dev
+      - name: hello-argo-demos
+        image: helloworldaspnetcore:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
