@@ -17,6 +17,14 @@ FROM build AS publish
 RUN dotnet publish "HelloWorldAspNetCore.csproj" -c Release -o /app/publish
 
 FROM base AS final
+
+ENV ASPNETCORE_URLS https://*:8080
+
+RUN apt update && \
+    apt install nginx
+ADD nginx-website.conf /etc/nginx/sites-enabled
+RUN service nginx restart
+
 WORKDIR /app
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "HelloWorldAspNetCore.dll"]
