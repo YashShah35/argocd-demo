@@ -1,28 +1,22 @@
-# Use Microsoft's official build .NET image.
-# https://hub.docker.com/_/microsoft-dotnet-core-sdk/
-FROM mcr.microsoft.com/dotnet/sdk:6.0-alpine AS build
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
+EXPOSE 80
+EXPOSE 443
 
-# Install production dependencies.
-# Copy csproj and restore as distinct layers.
-COPY *.csproj ./
-RUN dotnet restore
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["HelloWorldAspNetCore.csproj", "."]
+RUN dotnet restore "./HelloWorldAspNetCore.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "HelloWorldAspNetCore.csproj" -c Release -o /app/build
 
-# Copy local code to the container image.
-COPY . ./
+FROM build AS publish
+RUN dotnet publish "HelloWorldAspNetCore.csproj" -c Release -o /app/publish
+
+FROM base AS final
 WORKDIR /app
-
-# Build a release artifact.
-RUN dotnet publish -c Release -o out
-
-# Use Microsoft's official runtime .NET image.
-# https://hub.docker.com/_/microsoft-dotnet-core-aspnet/
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine-amd64 AS runtime
-WORKDIR /app
-COPY --from=build /app/out ./
-
-# Make sure the app binds to port 8080
-ENV ASPNETCORE_URLS http://*:8080
-
-# Run the web service on container startup.
+COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "HelloWorldAspNetCore.dll"]
