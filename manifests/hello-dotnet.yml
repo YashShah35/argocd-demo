@@ -16,7 +16,7 @@ spec:
         run: hello-dotnet
     spec:
       containers:
-      - name: strange-hofstadter
+      - name:HelloWorldAspNetCore
         image: helloworldaspnetcore:dev
         imagePullPolicy: IfNotPresent
         ports:
