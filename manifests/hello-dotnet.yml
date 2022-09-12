@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: hello-argo-demo
-        image: helloworldaspnetcore:dev
+        image: helloworldaspnetcore
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
