@@ -16,7 +16,7 @@ spec:
         run: hello-dotnet
     spec:
       containers:
-      - name: HelloWorldAspNetCore
+      - name: hello-argo-demo
         image: helloworldaspnetcore:dev
         imagePullPolicy: IfNotPresent
         ports:
