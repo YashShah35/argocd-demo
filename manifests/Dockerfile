@@ -26,5 +26,5 @@ ADD nginx-website.conf /etc/nginx/sites-enabled
 RUN service nginx restart
 
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY ${source:-obj/Docker/publish} .
 ENTRYPOINT ["dotnet", "HelloWorldAspNetCore.dll"]
