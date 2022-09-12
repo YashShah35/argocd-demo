@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: hello-dotnet
+  name: hello-dotnet
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: hello-dotnet
+  template:
+    metadata:
+      labels:
+        run: hello-dotnet
+    spec:
+      containers:
+      - name: hello-dotnet
+        image: helloworldaspnetcore:dev
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
