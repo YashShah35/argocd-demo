@@ -7,6 +7,13 @@ metadata:
   namespace: default
 spec:
   replicas: 1
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: hello-dotnet
+  type: NodePort
   selector:
     matchLabels:
       run: hello-dotnet
