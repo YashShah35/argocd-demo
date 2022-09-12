@@ -20,5 +20,5 @@ spec:
     spec:
       containers:
       - name: mylocaldemo
-        image: 'helloworldaspnetcore:latest'
+        image: helloworldaspnetcore:latest
         imagePullPolicy: Never
