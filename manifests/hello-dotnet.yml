@@ -6,10 +6,6 @@ metadata:
   name: hello-dotnet
   namespace: default
 spec:
- ports:
-  - port: 80
-    protocol: TCP
-    targetPort: 5001
   replicas: 1
   selector:
     app: hello-dotnet
