@@ -18,4 +18,3 @@ spec:
       containers:
       - name: mylocaldemo
         image: 10.0.2.1:5000/helloworldaspnetcore:latest
-        imagePullPolicy: IfNotPresent
