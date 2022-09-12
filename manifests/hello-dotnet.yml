@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
       - name: mylocaldemo
-        image: yash0305/helloworldaspnetcore:latest
+        image: helloworldaspnetcore:latest
