@@ -19,6 +19,6 @@ spec:
         run: hello-dotnet
     spec:
       containers:
-      - name: HelloWorldAspNetCore
+      - name: helloworldaspnetcore
         image: helloworldaspnetcore:latest
         imagePullPolicy: Never
