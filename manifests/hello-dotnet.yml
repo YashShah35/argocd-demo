@@ -16,6 +16,6 @@ spec:
         run: hello-dotnet
     spec:
       containers:
-      - name: hello-dotnet
-        image: gcr.io/YOUR-PROJECT-ID/hello-dotnet:v1
+      - name: mylocaldemo
+        image: helloworldaspnetcore:latest
         imagePullPolicy: IfNotPresent
