@@ -2,20 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: hello-dotnet
+    run: hello-dotnet
   name: hello-dotnet
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-dotnet
+      run: hello-dotnet
   template:
     metadata:
       labels:
         run: hello-dotnet
     spec:
       containers:
-      - name: hello-argo-demos
-        image: helloworldaspnetcore:latest
-        imagePullPolicy: IfNotPresent + latest
+      - name: hello-dotnet
+        image: gcr.io/YOUR-PROJECT-ID/hello-dotnet:v1
+        imagePullPolicy: IfNotPresent
