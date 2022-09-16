@@ -8,9 +8,6 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: hello-dotnet
-  type: NodePort
-  selector:
     matchLabels:
       run: hello-dotnet
   template:
@@ -22,3 +19,10 @@ spec:
       - name: helloworldaspnetcore
         image: helloworldaspnetcore:latest
         imagePullPolicy: Never
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 200m
+            memory: 200Mi
