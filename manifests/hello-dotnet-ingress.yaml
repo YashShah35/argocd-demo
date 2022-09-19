@@ -5,8 +5,7 @@ metadata:
   labels:
     run: hello-dotnet
 spec:
-  rules:
-  - host: http://localhost:4343
+  - rules:
     http:
       paths:
       - backend:
