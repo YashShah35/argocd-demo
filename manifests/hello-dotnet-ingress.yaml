@@ -6,7 +6,7 @@ metadata:
     run: hello-dotnet
 spec:
   rules:
-  - host: frontend.10.0.0.1.nip.io # IMPORTANT: update <ingress ip> with the dashed public IP of your ingress, for example frontend.13-68-177-68.nip.io
+  - host:
     http:
       paths:
       - backend:
