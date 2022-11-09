@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: foo.bar.com
+  - host: app1.yashdev.com
     http:
       paths:
       - pathType: Prefix
@@ -17,7 +17,7 @@ spec:
             name: hello-dotnet
             port:
               number: 80
-  - host: bar.foo.com
+  - host: app2.yashdev.com
     http:
       paths:
       - pathType: Prefix
