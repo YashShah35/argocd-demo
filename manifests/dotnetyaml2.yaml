@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: hello-dotnet
-  name: hello-dotnet
+    run: hello-dotnet2
+  name: hello-dotnet2
   namespace: default
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: hello-dotnet
+      run: hello-dotnet2
   template:
     metadata:
       labels:
-        run: hello-dotnet
+        run: hello-dotnet2
     spec:
       containers:
       - name: helloworldaspnetcore2
