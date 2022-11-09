@@ -7,8 +7,9 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 80
-    protocol: TCP
+    - protocol: TCP
+      port: 80
+      targetPort: 80
   selector:
     app: hello-dotnet2
   type: ClusterIP
