@@ -16,7 +16,7 @@ spec:
             name: hello-dotnet
             port:
               number: 80
-  - host: *.foo.com
+  - host: bar.foo.com
     http:
       paths:
       - pathType: Prefix
