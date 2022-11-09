@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: hello-dotnet2
+  name: hello-dotnet2
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: hello-dotnet2
+  type: ClusterIP
+  
