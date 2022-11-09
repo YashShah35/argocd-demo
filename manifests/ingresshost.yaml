@@ -11,7 +11,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /bar
+        path: /app1
         backend:
           service:
             name: hello-dotnet
@@ -21,7 +21,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: /foo
+        path: /app2
         backend:
           service:
             name: hello-dotnet2
