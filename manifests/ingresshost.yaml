@@ -4,7 +4,6 @@ metadata:
   name: ingress-wildcard-host
   annotations:
     nginx.ingress.kubernetes.io/default-backend: ingress-nginx-controller
-    kubernetes.io/ingress.class: nginx
     ## tells ingress to check for regex in the config file
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
@@ -14,7 +13,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/?(.*)"
+        path: /
         backend:
           service:
             name: hello-dotnet
@@ -24,7 +23,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/?(.*)"
+        path: /
         backend:
           service:
             name: hello-dotnet2
