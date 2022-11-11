@@ -2,10 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-wildcard-host
-  annotations:
-    nginx.ingress.kubernetes.io/default-backend: ingress-nginx-controller
-    ## tells ingress to check for regex in the config file
-    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   rules:
