@@ -18,7 +18,7 @@ spec:
       containers:
       - name: helloworldaspnetcore2
         image: helloworldaspnetcore:v2
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             cpu: 100m
