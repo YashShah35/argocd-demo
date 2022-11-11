@@ -18,7 +18,7 @@ spec:
           service:
             name: hello-dotnet
             port:
-              number: 80
+              number: 8081
   - host: app2.yashdev.com
     http:
       paths:
@@ -28,4 +28,4 @@ spec:
           service:
             name: hello-dotnet2
             port:
-              number: 80
+              number: 8082
